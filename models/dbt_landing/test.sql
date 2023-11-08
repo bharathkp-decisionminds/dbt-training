@@ -1,7 +1,7 @@
 {{
   config(
     materialized='table'
-  )
+  
   pre_hook=["CREATE OR REPLACE EXTERNAL TABLE dbt_landing.test_csv (
                 id INT64,
                 first_name STRING,
@@ -10,6 +10,7 @@
                     format = 'CSV',
                     uris = ['gs://dbt-training-landing/test/test_csv.csv'],
                     skip_leading_rows = 1);"]
+)
 }}
 
 with customers as (
