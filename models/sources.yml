@@ -1,0 +1,27 @@
+
+version: 2
+
+sources:
+  - name: dbt_landing
+    database: dm-solutions
+    tables:
+      - name: test_csv_external
+        description: "external table"
+      - name: test_landing
+        description: "external table"
+
+
+  - name: dbt_staging
+    database: dm-solutions
+    tables:
+      - name: test_staging
+        description: "external table"
+      - name: test_consumption
+        description: "external table"
+
+
+  - name: dbt_consumption
+    database: dm-solutions
+    tables:
+      - name: test_consumption
+        description: "external table"

@@ -2,7 +2,7 @@
   config(
     materialized='table',
   
-  pre_hook=["CREATE OR REPLACE EXTERNAL TABLE {{ env_var('DBT_GCP_PROJECT_ID') }}.{{ env_var('DBT_BQ_LANDING_DATASET') }}.test_csv (
+  pre_hook=["CREATE OR REPLACE EXTERNAL TABLE {{ source('dbt_landing', 'test_csv_external') }}(
                 id INT64,
                 first_name STRING,
                 last_name STRING
@@ -15,4 +15,4 @@
 
 
 
-select * from {{ env_var('DBT_GCP_PROJECT_ID') }}.{{ env_var('DBT_BQ_LANDING_DATASET') }}.test_csv
+select *, current_timestamp() as created_ts from {{ source('dbt_landing', 'test_csv_external') }}
