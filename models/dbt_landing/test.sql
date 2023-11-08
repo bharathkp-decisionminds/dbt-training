@@ -1,8 +1,8 @@
 {{
   config(
-    materialized='table'
+    materialized='table',
   
-  pre_hook=["CREATE OR REPLACE EXTERNAL TABLE dbt_landing.test_csv (
+  pre_hook=["CREATE OR REPLACE EXTERNAL TABLE {{ env_var('DBT_GCP_PROJECT_ID') }}.{{ env_var('DBT_BQ_LANDING_DATASET') }}.test_csv (
                 id INT64,
                 first_name STRING,
                 last_name STRING
@@ -20,9 +20,7 @@ with customers as (
         first_name,
         last_name
 
-    from   {{ env_var("DBT_GCP_PROJECT_ID").env_var("DBT_BQ_LANDING_DATASET").env_var("DBT_GCP_PROJECT_ID") }}
-    `dbt-tutorial`.jaffle_shop.customers
-
+    from   {{ env_var("DBT_GCP_PROJECT_ID") }}.{{ env_var("DBT_BQ_LANDING_DATASET") }}.{{ env_var("DBT_GCP_PROJECT_ID") }}
 ),
 
 orders as (
