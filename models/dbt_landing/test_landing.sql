@@ -1,6 +1,6 @@
 {{
   config(
-    materialized='table',
+    materialized='incremental',
   
   pre_hook=["CREATE OR REPLACE EXTERNAL TABLE {{ source('dbt_landing', 'test_csv_external') }}(
                 id INT64,
@@ -9,7 +9,10 @@
                 ) OPTIONS (
                     format = 'CSV',
                     uris = ['gs://dbt-training-landing/test/test_csv.csv'],
-                    skip_leading_rows = 1);"]
+                    skip_leading_rows = 1);
+                    
+            TRUNCATE TABLE {{ this }};
+            "]
 )
 }}
 

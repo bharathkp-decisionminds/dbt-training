@@ -1,8 +1,9 @@
 {{
   config(
-    materialized='table',
+    materialized='incremental',
     database = 'dm-solutions',
-    schema = 'dbt_consumption'
+    schema = 'dbt_consumption',
+    pre_hook=["TRUNCATE TABLE {{ this }}"]
 )
 }}
 

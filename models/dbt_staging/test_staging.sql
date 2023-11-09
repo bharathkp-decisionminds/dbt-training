@@ -1,8 +1,9 @@
 {{
   config(
-    materialized='table',
+    materialized='incremental',
     database = 'dm-solutions',
-    schema = 'dbt_staging'
+    schema = 'dbt_staging',
+    pre_hook=["TRUNCATE TABLE {{ this }}"]
 )
 }}
 
