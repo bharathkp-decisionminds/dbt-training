@@ -41,7 +41,7 @@ models:
     # schema: dbt_landing
   test_staging:
     +materialized: table
-    +schema: dbt_staging
+    schema: dbt_staging
   dbt_consumption:
     +materialized: table
     # schema: dbt_consumption
