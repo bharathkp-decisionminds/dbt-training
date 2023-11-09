@@ -1,6 +1,8 @@
 {{
   config(
-    materialized='table'
+    materialized='table',
+    database = 'dm-solutions',
+    schema = 'dbt_staging'
 )
 }}
 

@@ -11,17 +11,15 @@ sources:
         description: "external table"
 
 
-  - name: dbt_staging
-    database: dm-solutions
-    tables:
-      - name: test_staging
-        description: "external table"
-      - name: test_consumption
-        description: "external table"
+  # - name: dbt_staging
+  #   database: dm-solutions
+  #   tables:
+  #     - name: test_staging
+  #       description: "external table"
 
 
-  - name: dbt_consumption
-    database: dm-solutions
-    tables:
-      - name: test_consumption
-        description: "external table"
+  # - name: dbt_consumption
+  #   database: dm-solutions
+  #   tables:
+  #     - name: test_consumption
+  #       description: "external table"
