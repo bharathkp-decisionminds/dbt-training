@@ -10,16 +10,128 @@ sources:
       - name: test_landing
         description: "external table"
 
+      - name: ext_enterprise_survey
+        description: "The CSV External Table for Enterprise Survey"
 
-  # - name: dbt_staging
-  #   database: dm-solutions
-  #   tables:
-  #     - name: test_staging
-  #       description: "external table"
+      - name: lndg_enterprise_survey
+        description: "The Landing table for the Enterprise Data"
+
+  - name: dbt_staging
+    database: dm-solutions
+    tables:
+      - name: test_staging
+        description: "external table"
+
+      - name: stg_enterprise_survey
+        description: "The Staging table for the Enterprise Data"
 
 
-  # - name: dbt_consumption
-  #   database: dm-solutions
-  #   tables:
-  #     - name: test_consumption
-  #       description: "external table"
+  - name: dbt_consumption
+    database: dm-solutions
+    tables:
+      - name: test_consumption
+        description: "external table"
+
+      - name: enterprise_survey
+        description: "The Consumption table for the Enterprise Data"
+
+models:
+  - name: test_csv_external
+    description: "A test model"
+    columns:
+        - name: id
+          tests:
+              - unique
+              - not_null
+        - name: first_name
+        - name: last_name
+
+  - name: test_landing
+    description: "A test model"
+    columns:
+        - name: id
+          tests:
+              - unique
+              - not_null
+        - name: first_name
+        - name: last_name
+        - name: created_ts
+
+  - name: test_staging
+    description: "A test model"
+    columns:
+        - name: id
+          tests:
+              - unique
+              - not_null
+        - name: first_name
+        - name: last_name
+        - name: created_ts 
+
+  - name: test_consumption
+    description: "A test model"
+    columns:
+        - name: id
+          tests:
+              - unique
+              - not_null
+        - name: first_name
+        - name: last_name
+        - name: created_ts
+  
+  - name: lndg_enterprise_survey
+    description: "Model for the Landing Enerprise Survey"
+    columns:
+        - name: id
+          tests:
+              - not_null
+        - name: year
+        - name: industry_code_ANZSIC
+        - name: industry_name_ANZSIC
+        - name: rme_size_grp
+        - name: variable
+        - name: value
+        - name: unit
+        - name: source_file
+        - name: created_ts
+        - name: created_by
+        - name: last_modified_ts
+        - name: last_modified_by
+
+  - name: stg_enterprise_survey
+    description: "Model for the Staging Enerprise Survey"
+    columns:
+        - name: id
+          tests:
+              - not_null
+        - name: year
+        - name: industry_code_ANZSIC
+        - name: industry_name_ANZSIC
+        - name: rme_size_grp
+        - name: variable
+        - name: value
+        - name: unit
+        - name: source_file
+        - name: created_ts
+        - name: created_by
+        - name: last_modified_ts
+        - name: last_modified_by
+
+  - name: enterprise_survey
+    description: "Model for the Staging Enerprise Survey"
+    columns:
+        - name: id
+          tests:
+              - not_null
+        - name: year
+        - name: industry_code_ANZSIC
+        - name: industry_name_ANZSIC
+        - name: rme_size_grp
+        - name: variable
+        - name: value
+        - name: unit
+        - name: source_file
+        - name: created_ts
+        - name: created_by
+        - name: last_modified_ts
+        - name: last_modified_by

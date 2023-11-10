@@ -36,12 +36,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  dbt_landing:
+  test_landing:
     +materialized: table
     # schema: dbt_landing
   test_staging:
     +materialized: table
     schema: dbt_staging
-  dbt_consumption:
+  test_consumption:
     +materialized: table
     # schema: dbt_consumption
