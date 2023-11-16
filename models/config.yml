@@ -67,8 +67,19 @@ models:
     columns:
       - name: id
         tests:
-          - unique
           - not_null
-      # - name: email
-      #   tests:
-      #     - is_email
+      - name: year
+      - name: industry_code_ANZSIC
+      - name: industry_name_ANZSIC
+      - name: rme_size_grp
+      - name: variable
+      - name: value
+      - name: unit
+      - name: source_file
+      - name: created_ts
+      - name: created_by
+      - name: last_modified_ts
+      - name: last_modified_by
+      - name: email
+        tests:
+          - is_email

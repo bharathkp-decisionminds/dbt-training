@@ -16,12 +16,12 @@ sources:
   #     - name: lndg_enterprise_survey
   #       description: "The Landing table for the Enterprise Data"
 
-      - name: my-python-model
-        description: "The Landing table for the Enterprise Data"
-        columns:
-          - name: email
-            tests:
-              - is_email
+      # - name: my-python-model
+      #   description: "The Landing table for the Enterprise Data"
+      #   columns:
+      #     - name: email
+      #       tests:
+      #         - is_email
 
   # - name: dbt_staging
   #   database: dm-solutions

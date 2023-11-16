@@ -3,9 +3,9 @@
 with validation as (
 
     select
-        {{ column_name }} as email_field
+        {{column_name}} as email_field
 
-    from {{ model }}
+    from {{model}}
 
 ),
 
@@ -14,7 +14,7 @@ validation_errors as (
     select
         email_field
     from validation
-    where (email_field not like '%@%') and (email_field not like '%.com'
+    where (email_field not like '%@%') and (email_field not like '%.com')
 
 )
 
