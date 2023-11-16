@@ -39,6 +39,6 @@ select
     current_timestamp() as last_modified_ts, 
     'dbt' as last_modified_by 
 from {{ source('dbt_landing', 'ext_enterprise_survey') }}
-where cast(concat(split(split(_FILE_NAME, ".")[0], "-")[4],"-",
-split(split(_FILE_NAME, ".")[0], "-")[5],"-",
-split(split(_FILE_NAME, ".")[0], "-")[6]) as date) = current_date()
+-- where cast(concat(split(split(_FILE_NAME, ".")[0], "-")[4],"-",
+-- split(split(_FILE_NAME, ".")[0], "-")[5],"-",
+-- split(split(_FILE_NAME, ".")[0], "-")[6]) as date) = current_date()
