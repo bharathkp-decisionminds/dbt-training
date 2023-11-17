@@ -59,7 +59,6 @@ models:
         - name: last_modified_by
 
   - name: my_python_model
-    description: My transformation written in Python
     config:
       materialized: table
       tags: ['python']
@@ -80,6 +79,7 @@ models:
       - name: created_by
       - name: last_modified_ts
       - name: last_modified_by
+      - name: message
       - name: email
         tests:
           - is_email
