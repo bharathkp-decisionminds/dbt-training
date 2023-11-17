@@ -1,4 +1,4 @@
-{% test is_email(model, column_name) %}
+{% test test_is_email(model, column_name) %}
 
 with validation as (
 

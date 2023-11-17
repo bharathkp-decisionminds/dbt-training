@@ -64,22 +64,22 @@ models:
       tags: ['python']
 
     columns:
-      - name: id
-        tests:
-          - not_null
-      - name: year
-      - name: industry_code_ANZSIC
-      - name: industry_name_ANZSIC
-      - name: rme_size_grp
-      - name: variable
-      - name: value
-      - name: unit
-      - name: source_file
-      - name: created_ts
-      - name: created_by
-      - name: last_modified_ts
-      - name: last_modified_by
-      - name: message
-      - name: email
-        tests:
-          - is_email
+        - name: id
+          tests:
+            - not_null
+        - name: year
+        - name: industry_code_ANZSIC
+        - name: industry_name_ANZSIC
+        - name: rme_size_grp
+        - name: variable
+        - name: value
+        - name: unit
+        - name: source_file
+        - name: created_ts
+        - name: created_by
+        - name: last_modified_ts
+        - name: last_modified_by
+        - name: message
+        - name: email
+          tests:
+            - test_is_email
