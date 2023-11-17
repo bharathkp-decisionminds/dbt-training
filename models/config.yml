@@ -82,4 +82,4 @@ models:
         - name: message
         - name: email
           tests:
-            - test_is_email
+            - is_email: {column_name: 'email'}
