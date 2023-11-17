@@ -58,11 +58,10 @@ models:
         - name: last_modified_ts
         - name: last_modified_by
 
+    # config:
+    #   materialized: table
+    #   tags: ['python']
   - name: my_python_model
-    config:
-      materialized: table
-      tags: ['python']
-
     columns:
         - name: id
           tests:
@@ -82,4 +81,7 @@ models:
         - name: message
         - name: email
           tests:
-            - is_email: {column_name: 'email'}
+            - is_email
+        - name: uuid_id
+          tests:
+            - unique
